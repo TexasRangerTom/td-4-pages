@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Dogra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Acceuil</title>
+</head>
+<body>
+ <header>
+    <nav>
+         <ul>
+            <li><a href="#foot">contact</a></li>
+            <li><a href="#section-3-page-2">syntaxe</a></li>
+            <li><a href="#section-selecteur">selecteurs</a></li>
+         </ul>
+    </nav>
+    <h1 id="sommet"> CSS</h1>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Acceuil</a></li>
+            <li><a href="./css.html">Css</a></li>
+            <li><a href="./pageHtml.html">Html</a></li>
+            <li><a href="./javascript.html">Javascript</a></li>
+         </ul>
+    </nav>
+ </header>
+ <main>
+    <section id="section-1-page-2">
+        <h2>Qu'est que CSS</h2>
+        <div class="container-section-1-css">
+            <div class="image-css">
+                <img src="../imgs/css-image-1.jpg" alt="css-img">
+            </div>
+            <article>
+                <h3>Cascading style sheet</h3>
+                <p>Cascading Style Sheets (CSS) est un langage de feuille de style utilisée pour décrire l'apparence et la mise en forme d'un document écrit en langue de balisage. CSS a été développé par World Wide Web Consortium (W3C). CSS définit comment les éléments HTML doivent être affichés.Les styles sont généralement enregistrés à external .css files. Les feuilles de styles externes vous donnent une opportunité de changer l'apparence et la mise en page de toutes les pages dans un site web, juste en modifiant un seul fichier. </p>
+            </article>
+            <div class="image-css">
+                <img src="../imgs/Css-image-2.png" alt="css-img">
+            </div>
+        </div>
+    </section>
+    <section id="section-2-page-2">
+        <div class="titre-utilisation">
+        <h2>Utilisation</h2>
+        </div>
+        <div class="container-section-2-css">
+            <article class="box-css-1">
+                <h3>mise en place</h3>
+                <p>Il y a trois façons d'ajouter les styler CSS au document HTML.</p>
+                <ol>
+                    <li>style en ligne - ajouter l'attribut style aux éléments HTML</li>
+                    <li>style interne - ajouter l'élément style dans la séction head</li>
+                    <li>style externe - créer un fichier extérieure de CSS</li>
+                </ol>
+                <div>
+                    <img>
+                </div>
+            </article>
+            <article class="box-css-2">
+                <h3>style en ligne</h3>
+                <p>Vous pouvez utiliser l'attribut style de n'importe quel élément HTML pour définir les règles de style. Ces règles seront appliquées à cet élément seulement. L'attribut style peut contenir n'importe quelle propriété CSS.</p>
+                <div class="img-enligne">
+                    <img src="../imgs/cssenligne.png" alt="cssthingy">
+                </div>
+            </article>
+            <article class="box-css-3">
+                <h3>style externe</h3>
+                <p>Le style externe est largement utilisé pour appliquer les styles généraux au site web entier. Il s'applique à la création d'un fichier externe CSS qui comprend toute l'information de style. Vous pouvez créer tel type de fichier avec n'importe quel texte ou en éditeur HTML tel que "Notepad" ou "Sublime text”. Un fichier CSS contient seulement CSS, et vous devez l'enregistrer avec l'extension .css file. Pour faire référence à la feuille de style externe à une page web vous devez utiliser la balise <link> dans la séction <head> d'un document HTML. Chaque page web doit être liée à la feuille de style. Lors l'utilisation d'une feuille de style externe, tous les fichiers HTML sont liés à un fichier CSS en résultant dans un apparence cohérente. Si vous voulez changer le style des pages web, vous devez faire les changements correspondants dans one .css file.</p>
+                <div class="img-externe">
+                    <img src="../imgs/stylexterncss.png" alt="logoextern">
+                </div>
+            </article>
+        </div>
+
+    </section>
+    <section id="section-3-page-2">
+        <div class="titre-syntaxe">
+        <h2>Syntaxe</h2>
+        </div>
+        <div class="p-titre-p">
+            <article>
+                <h3 class="titre-selecteur">Selecteur</h3>
+                <p>Le sélecteur est l'élément HTML que vous voulez styler. Cela peut être n'importe quelle balise telle que &lt;h1&gt;, &lt;p&gt;, etc. Chaque sélecteur peut avoir une ou plusieurs propriétés, souligné en rouge sur l'image.</p>
+                <div>
+                    <img>
+                </div>
+            </article>
+             <div class="valeur-propriete-selecteur">
+                   <img src="../imgs/selecteurproprietevaleur.jpg" alt="css-exemple">
+             </div>
+             <article>
+                <h3 class="titre-propriete">propriété</h3>
+                <p>La propriété est l'attribut de style de la balise HTML. Tous les attributs HTML sont convertis en propriétés CSS (color, border, etc.). Chaque propriété a sa valeur, souligné en bleu sur l'image</p>
+                <div>
+                    <img>
+                </div>
+            </article>
+        </div>
+        <div class="syntaxe-container">
+            <article>
+                <h3 class="titre-valeur">Valeur</h3>
+                <p>La valeur est assigné à la propriété. Par exemple, la propriété color peut avoir soit red ou #F1F1F1 etc, souligné en vert sur l'image</p>
+                <div>
+                    <img>
+                </div>
+            </article>
+        </div>
+
+    </section>
+    <section id="section-selecteur">
+        <div class="titre-selecteur-box">
+        <h2>Quelques selecteurs</h2>
+        </div>
+        <div>
+            <article>
+                <h3 class="titre-selecteur-universel"> selecteur universel</h3>
+                <div class="selecteur-universel-box">
+                <p>Avant de continuer avec des choses plus complexes, prenons le temps de découvrir le sélecteur universel. Il permet de <strong>cibler toutes les balises sans exception</strong>. Le caractère qui identifie le sélecteur universel est *. Il s'utilise de manière très simple.</p>
+                <img src="../imgs/selecteur-universel-css.png" alt="logocss">
+                </div>
+            </article>
+            <article>
+                <h3 class="titre-selecteur-class"> selecteur de classe</h3>
+                <div class="selecteur-class-box">
+                    <img src="../imgs/classCss.jpeg" alt="Classcss">
+                    <p>A l'inverse d'un identifiant, un ou plusieurs éléments peuvent avoir la même classe. Le sélecteur de classe sélectionne les éléments avec un attribut de classe spécifique. Le sélecteur de classe utilise l'attribut class="" d'une balise HTML pour sélectionner une ou plusieurs balises.
+                        Pour sélectionner des éléments avec une classe spécifique, il faut utiliser le caractère point : . suivi du nom de la classe.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section id="section-resultats">
+        <div class="titre-resultats-box">
+        <h2>Resultats</h2>
+        </div>
+        <div class="container-results">
+         <div class="left-result">
+            <article>
+              <h3>Avant le Css</h3>
+              <div class="img-left-result">
+                 <img src="../imgs/before css.png" alt="cssb">
+              </div>
+              <p></p>
+            </article>
+         </div>
+         <div class="right-result">
+            <article>
+              <h3>Aprés un petit coup de Css</h3>
+              <div class="img-right-result">
+                 <img src="../imgs/aftercss.png" alt="cssa">
+              </div>
+              <p></p>
+            </article>
+        </div>
+        </div>
+    </section>
+    
+
+
+ </main>
+ <footer id="foot">
+    <div class="footer-container">
+        <div>
+            <a href="#sommet"><img src="../imgs/arrow-up.jpg" alt="arrowup"></a>
+        </div>
+        <article>
+            <div class="logo-up">
+                <img class="logo-telephone" src="../imgs/address-icon-logo-illustration-map-pointer-house-symbol-template-for-graphic-and-web-design-collection-free-vector.jpg" alt="logo">
+            </div>
+            <h3>Adresse</h3>
+            <p>13 rue des figues en rute</p>
+        </article>
+        <article>
+            <div>
+              <img src="../imgs/mail-icon-2048x2048-525ey8hu.png" alt="emailogo">
+            </div>
+            <h3>email</h3>
+            <p>bababrown69@gmail.vietnam</p>
+        </article>
+        <article>
+            <div>
+              <img src="../imgs/telephone logo.png" alt="téléphone">
+            </div>
+            <h3>Téléphone</h3>
+            <p>02 36 79 08 99</p>
+        </article>
+        <div class="logo-up-2">
+            <a href="#sommet"><img src="../imgs/arrow-up.jpg" alt="arrowup"></a>
+        </div>
+    </div>
+ </footer>
+
+ 
+</body>

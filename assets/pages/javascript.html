@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Dogra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Acceuil</title>
+</head>
+<body>
+ <header>
+    <nav>
+         <ul>
+            <li><a href="#foot">contact</a></li>
+            <li><a href="#section-javascript-dynamique">langage dynamique</a></li>
+            <li><a href="#section-côté-client">langage côté client</a></li>
+         </ul>
+    </nav>
+    <h1 id="sommet"> Javascript</h1>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Acceuil</a></li>
+            <li><a href="./css.html">Css</a></li>
+            <li><a href="./pageHtml.html">Html</a></li>
+            <li><a href="./javascript.html">Javascript</a></li>
+         </ul>
+    </nav>
+ </header>
+ <main>
+    <section id="section-intro-java">
+        <h2>Introduction Javascript</h2>
+        <article>
+        <div class="intro-java-container">
+         <div class="java-intro-pics">
+            <img src="../imgs/javascript-intro-img.png" alt="java-logo1">
+         </div>
+         <p>Dans cette première leçon d’introduction, nous allons définir ce qu’est le JavaScript ainsi que les principes fondateurs de ce langage et allons comprendre la place du JavaScript parmi les autres langages et ses usages.</p>
+         <div class="java-intro-pics">
+            <img src="../imgs/javascript-intro-img2.png" alt="java-logo2">
+         </div>
+        </div> 
+        </article>
+        <article class="box-histoire-java">
+            <h3>Histoire</h3>
+            <p>Le JavaScript est un langage de programmation créé en 1995. Le JavaScript est aujourd’hui l’un des langages de programmation les plus populaires et il fait partie des langages web dits « standards » avec le HTML et le CSS. Son évolution est gérée par le groupe ECMA International qui se charge de publier les standards de ce langage.
+
+                On dit que le HTML, le CSS et le JavaScript sont des standards du web car les principaux navigateurs web (Google Chrome, Safari, Firefox, etc.) savent tous « lire » (ou « comprendre » ou « interpréter ») ces langages et les interprètent généralement de la même façon ce qui signifie qu’un même code va généralement produire le même résultat dans chaque navigateur.
+                
+                Pour définir ce qu’est le JavaScript et le situer par rapport aux autres langages, et donc pour comprendre les intérêts et usages du JavaScript il faut savoir que :
+                
+              <ul>
+                <li>Le JavaScript est un langage dynamique ;</li>
+                <li>Le JavaScript est un langage (principalement) côté client ;
+                </li>
+                <li>Le JavaScript est un langage interprété ;
+                </li>
+                <li>Le JavaScript est un langage orienté objet.
+                </li>
+              </ul>
+              Pas d’inquiétude, on va définir le plus simplement possible ce que ces qualificatifs signifient !
+    
+    </p>
+        </article>
+    </section>
+    <section id="section-javascript-dynamique">
+        <h2>Le JavaScript, un langage dynamique</h2>
+        <div class="container-dynamique">
+            <article class="box-text-dynamique">
+                <p>Le JavaScript est un langage dynamique, c’est-à-dire un langage qui va nous permettre de générer du contenu dynamique pour nos pages web.</p>
+
+                    <p>Un contenu « dynamique » est un contenu qui va se mettre à jour dynamiquement, c’est-à-dire changer sans qu’on ait besoin de modifier le code manuellement mais plutôt en fonction de différents facteurs externes.</p>
+                    
+                    <p>On oppose généralement les langages « dynamiques » aux langages « statiques » comme le HTML et le CSS. Illustrons les différences d’utilisation entre ces types de langage en discutant des possibilités du HTML, du CSS et du JavaScript.</p>
+                    
+                    <p>Pour rappel, le HTML est un langage de balisage (langage qui utilise des balises) qui est utilisé pour structurer et donner du sens aux différents contenus d’une page. Le HTML nous permet de communiquer avec un navigateur en lui indiquant que tel contenu est un titre, tel contenu est un simple paragraphe, tel autre est une liste, une image, etc.</p>
+                    
+                    <p>Le navigateur comprend les différentes balises HTML et va alors afficher notre page à nos visiteurs en tenant compte de celles-ci.</p>
+                    
+                    <p>Le contenu HTML ne va jamais être affiché tel quel, brut, mais des règles de mises en forme vont lui être appliquées. Ces règles de styles vont être définies en CSS. Le CSS va ainsi nous permettre d’arranger les différents contenus HTML de la page en les positionnant les uns par rapport aux autres, en modifiant la couleur des textes, la couleur de fond des éléments HTML, etc.</p>
+                    
+                    <p>Le CSS va ainsi se charger de l’aspect visuel de notre page tandis que le HTML se charge de la structure (définir les contenus) de celle-ci.</p>
+                    
+                    <p>Le HTML et le CSS forment ainsi un premier couple très puissant. Cependant, nous allons être limités si nous n’utilisons que ces deux langages tout simplement car ce sont des langages qui ne permettent que de créer des pages « statiques ».</p>
+                    
+                    <p>Une page statique est une page dont le contenu est le même pour tout le monde, à tout moment. En effet ni le HTML ni le CSS ne nous permettent de créer des contenus qui vont se mettre à jour par eux-mêmes. Le CSS, avec les animations, nous permet de créer des styles pseudo-dynamiques mais tout de même prédéfinis.</p>
+                    
+                    <p>C’est là où le JavaScript entre en jeu : ce langage va nous permettre de manipuler des contenus HTML ou des styles CSS et de les modifier en fonction de divers évènements ou variables. Un évènement peut être par exemple un clic d’un utilisateur à un certain endroit de la page tandis qu’une variable peut être l’heure de la journée.</p>
+                    
+                    <p>Regardez par exemple le code suivant :</p>
+            </article>
+            <article class="box-img-dynamique">
+                <img src="../imgs/java-dynamique-img.jpeg" alt="examplejava">
+            </article>
+        </div>
+        <article class="second-text-dynamique">
+            <p>
+                L’idée n’est bien sûr pas ici de vous expliquer comment fonctionne ce code qui est déjà relativement complexe mais de vous donner une idée de ce qu’on va pouvoir réaliser avec quelques lignes de JavaScript.
+
+             Mon code JavaScript est ici placé dans l’élément head de mon fichier HTML à l’intérieur d’un élément script. Ce code récupère l’heure actuelle et l’actualise toutes les secondes d’une part, et nous permet de cacher / d’afficher l’heure via un bouton d’autre part.
+
+             Ces deux fonctionnalités sont des fonctionnalités dynamiques qu’on n’aurait pas pu réaliser en HTML ni en CSS </p>
+        </article>
+        
+    </section>
+    <section id="section-côté-client">
+        <h2>Le JavaScript, un langage (principalement) côté client</h2>
+        <div class="container-côté-client">
+        <article class="box-text-côté-client">
+            <p>La catégorisation langages statiques / langage dynamique est une première façon de classer les différents langages de programmation.</p>
+
+                <p>On peut également classer les différents langages selon l’endroit où ils vont s’exécuter : soit côté client, soit côté serveur.<p>
+                
+                <p>Pour comprendre ce que sont les langages « côté client » et « côté serveur », il convient avant tout de comprendre ce qu’est un client et ce qu’est un serveur et pour cela il faut savoir ce qu’est un site.</p>
+                
+                <p>Un site est un ensemble de ressources et de fichiers liés entre eux. Pour que notre site soit accessible sur le web pour tous, on va l’héberger sur un serveur, c’est-à-dire envoyer l’ensemble de nos fichiers sur le serveur et on va également acheter un nom de domaine qui va servir à identifier notre site.<p>
+                
+                <p>Un « serveur » est une sorte de super ordinateur, constamment accessible et connectés aux autres serveurs (formant ainsi un réseau qu’on appelle le web) et qui va héberger les fichiers constituant un (ou plusieurs) site(s) web et le(s) « servir » sur demande du client.</p>
+                
+                <p>Lorsqu’on demande à accéder à une page web en tapant une URL dans notre navigateur, nous sommes le client ou plus exactement notre navigateur est le logiciel client qui effectue une demande ou « requête » au serveur qui est la suivante : « sers-moi le fichier correspondant à l’adresse que je t’ai envoyée ».</p>
+                
+                <p>Les fichiers ou pages d’un site web vont pouvoir être constituées de deux types de codes différents : du code côté serveur et du code côté client. Lorsqu’on demande à un serveur de nous servir une page, celui-ci se charge d’exécuter le code côté client s’il y en a et ne va renvoyer que du code côté client en résultat.</p>
+                
+                <p>Un langage « côté client » ou « client side » est un langage qui va être exécuté dans le navigateur des utilisateurs qui demandent la page. On peut également appeler ces langages des langages « web » puisqu’ils sont principalement utilisés dans un contexte web.</p>
+                
+                <p>Il existe aujourd’hui 3 langages côté client incontournables qui sont le HTML, le CSS et le JavaScript.</p>
+                
+                <p>Les langages côté serveur sont des langages qui vont s’exécuter sur le serveur. Les navigateurs ne sont dans la grande majorité des cas pas capables de comprendre les langages serveur.</p>
+                
+                <p>Ces langages permettent notamment d’effectuer de manipuler les données pour renvoyer des résultats. Les résultats renvoyés le sont sous forme de code compréhensible par le navigateur (c’est-à-dire du HTML principalement) pour que le navigateur puisse afficher le résultat final.</p>
+                
+                <p>La chose importante à retenir ici est que le JavaScript est un langage principalement utilisé côté client, mais qui va également pouvoir s’utiliser côté serveur à condition qu’on mette en place un environnement favorable (en utilisant Node.js par exemple).</p>
+                
+                <p>Dans ce cours, nous allons exclusivement nous concentrer sur un usage du JavaScript côté client.</p>
+                
+        </article>
+        <div class="box-côté-client">
+        <article>
+            <h3>Le JavaScript, un langage interprété</h3>
+            <p>On peut encore séparer les langages selon qu’ils puissent être exécutés directement (on parlera alors de langages interprétés) ou qu’il faille les transformer en une autre forme pour pouvoir les exécuter (on parlera alors le langages compilés).
+
+                Le JavaScript est un langage interprété. Cela signifie qu’il va pouvoir être exécuté directement sous réserve qu’on possède le logiciel interpréteur. Pas de panique ici : tous les navigateurs connus possèdent leur interpréteur JavaScript.</p>
+                <div class="img-côté-client">
+                    <img src="../imgs/Javascript-img1.png" alt="image-java">
+                </div>
+        </article>
+        <article>
+            <h3>Le JavaScript, un langage orienté objet</h3>
+            <P>Finalement, le JavaScript est un langage orienté objet. Il est trop tôt selon moi pour vous expliquer ce que ça signifie ; nous reparlerons de cela dans la partie consacrée aux objets.</P>
+            <div class="img-côté-client">
+                <img src="../imgs/Javascript-img2.png" alt="java-logo-1">
+            </div>
+        </article>
+        </div>
+        </div>
+    </section>
+ </main>
+
+
+ <footer id="foot">
+    <div class="footer-container">
+        <div>
+            <a href="#sommet"><img src="../imgs/arrow-up.jpg" alt="arrowup"></a>
+        </div>
+        <article>
+            <div class="logo-up">
+                <img class="logo-telephone" src="../imgs/address-icon-logo-illustration-map-pointer-house-symbol-template-for-graphic-and-web-design-collection-free-vector.jpg" alt="logo">
+            </div>
+            <h3>Adresse</h3>
+            <p>13 rue des figues en rute</p>
+        </article>
+        <article>
+            <div>
+              <img src="../imgs/mail-icon-2048x2048-525ey8hu.png" alt="emailogo">
+            </div>
+            <h3>email</h3>
+            <p>bababrown69@gmail.vietnam</p>
+        </article>
+        <article>
+            <div>
+              <img src="../imgs/telephone logo.png" alt="téléphone">
+            </div>
+            <h3>Téléphone</h3>
+            <p>02 36 79 08 99</p>
+        </article>
+        <div class="logo-up-2">
+            <a href="#sommet"><img src="../imgs/arrow-up.jpg" alt="arrowup"></a>
+        </div>
+    </div>
+ </footer>
+</body>
+</html>

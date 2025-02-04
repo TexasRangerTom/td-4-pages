@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Dogra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Acceuil</title>
+</head>
+<body>
+ <header>
+    <nav>
+         <ul>
+            <li><a href="#foot">contact</a></li>
+         </ul>
+    </nav>
+    <h1 id="sommet"> Contactez-nous</h1>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Acceuil</a></li>
+            <li><a href="./css.html">Css</a></li>
+            <li><a href="./pageHtml.html">Html</a></li>
+            <li><a href="./javascript.html">Javascript</a></li>
+         </ul>
+    </nav>
+ </header>
+ <main>
+    <form>
+         <h1>Formulaire de contacte</h1>
+         <fieldset>
+            <legend>Info Personnel</legend>
+         <label for="firstname">Votre prénom:</label><br>
+         <input type="text" id="firstname" placeholder="renseigner votre prénom" name="first-name" ><br>
+         <label for="lastname">Votre nom de famille:</label><br>
+         <input type="text" id="lastname" placeholder="Renseigner votre nom de famille" name="lastname"><br>
+         <label for="email">Votre adresse Email</label><br>
+         <input type="email" id="email" placeholder="Renseigner votre email"><br>
+         
+
+        <label for="comments">Posez vos question et laissez vos avis !</label><br>
+        <textarea id="comments" name="comments" rows="3" cols="30"></textarea><br>
+        <button type="button" onclick="openForm()"  >envoyer</button>
+        <div id="form-popup">
+          <div class="pop-up" id="popupForm">
+          <h2>Merci !</h2>
+          <p>Nous apprécions l'intêret porté à notre site </p>
+          <p>Nous reviendrons vers vous prochainement</p>
+            <div class="container-btn-cancel">
+               <button type="button" class="btn-cancel"   onclick="closeForm()">Fermer</button>
+          </div>
+          </div>
+        </div>
+      
+         </fieldset>
+        
+    </form>
+    <div>
+      <script>
+         function openForm() {
+           document.getElementById("popupForm").style.display = "block";
+         }
+   
+         function closeForm() {
+           document.getElementById("popupForm").style.display = "none";
+         }
+       </script>
+    </div>
+
+ </main>
+ <footer id="foot">
+   <div class="footer-container">
+       <div>
+           <a href="#sommet"><img src="../imgs/arrow-up.jpg" alt="arrowup"></a>
+       </div>
+       <article>
+           <div class="logo-up">
+               <img class="logo-telephone" src="../imgs/address-icon-logo-illustration-map-pointer-house-symbol-template-for-graphic-and-web-design-collection-free-vector.jpg" alt="logo">
+           </div>
+           <h3>Adresse</h3>
+           <p>13 rue des figues en rute</p>
+       </article>
+       <article>
+           <div>
+             <img src="../imgs/mail-icon-2048x2048-525ey8hu.png" alt="emailogo">
+           </div>
+           <h3>email</h3>
+           <p>bababrown69@gmail.vietnam</p>
+       </article>
+       <article>
+           <div>
+             <img src="../imgs/telephone logo.png" alt="téléphone">
+           </div>
+           <h3>Téléphone</h3>
+           <p>02 36 79 08 99</p>
+       </article>
+       <div class="logo-up-2">
+           <a href="#sommet"><img src="../imgs/arrow-up.jpg" alt="arrowup"></a>
+       </div>
+   </div>
+
+</footer>
+</body>
+</html>

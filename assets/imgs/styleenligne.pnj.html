@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://fr.w3docs.com/apprendre-css/utilisation-de-css.html -->
+<html lang="fr" class="scroll-smooth" data-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" async="" charset="utf-8" src="./styleenligne_files/recaptcha__fr.js.télécharger" crossorigin="anonymous" integrity="sha384-6KY5fUxlPmbCBuNtVO1roRfQuiOMROAglr8hKwzLH2YH7J6R2Su+EyDGS58CqCN0" nonce="sAgnPF9fmAxcS586OAv60Q"></script><script async="" src="./styleenligne_files/gtm.js.télécharger"></script><script>
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      'section_of_website': 'book',
+      'tech': 'css',
+      'type_of': 'm',
+      'wc': 253,
+      'rc': 2,
+      'jm': 0,
+      'practice': 1
+    })
+  </script>
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56G6JZ3');</script>
+<!-- End Google Tag Manager -->
+<script src="./styleenligne_files/aaw.w3docs3.js.télécharger" async=""></script>
+
+<script>
+  function getCookieValue(cookieName) {
+    var cookies = document.cookie.split('; ');
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i].split('=');
+      if (cookie[0] === cookieName) {
+        return cookie[1];
+      }
+    }
+    return null; // Cookie not found
+  }
+  try {
+    var theme = getCookieValue("theme");
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+      document.documentElement.dataset.theme = 'dark'
+    } else {
+      document.documentElement.classList.remove('dark')
+      document.documentElement.dataset.theme = 'light'
+    }
+  } catch (_) {}
+</script>
+
+	
+	<title>Utilisation de CSS</title>
+	<meta name="description" content=" Les façons différentes d&#39;appliquer les styles CSS. ">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	<link rel="manifest" href="https://fr.w3docs.com/manifest.json">
+	<link rel="apple-touch-icon" href="https://fr.w3docs.com/images/logos/192.png">
+	<meta name="theme-color" content="#42444e">
+	<link rel="shortcut icon" href="https://fr.w3docs.com/favicon.ico">
+
+			<link rel="preload" href="https://fonts.googleapis.com/css?family=Nunito:400,700&amp;display=optional" as="style">
+		<style type="text/css">@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/s/nunito/5.0.16/cyrillic-ext/400/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:optional;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/s/nunito/5.0.16/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:optional;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/s/nunito/5.0.16/cyrillic/400/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:optional;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/s/nunito/5.0.16/vietnamese/400/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:optional;}@font-face {font-family:Nunito;font-style:normal;font-weight:400;src:url(/cf-fonts/s/nunito/5.0.16/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:optional;}@font-face {font-family:Nunito;font-style:normal;font-weight:700;src:url(/cf-fonts/s/nunito/5.0.16/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:optional;}@font-face {font-family:Nunito;font-style:normal;font-weight:700;src:url(/cf-fonts/s/nunito/5.0.16/cyrillic/700/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:optional;}@font-face {font-family:Nunito;font-style:normal;font-weight:700;src:url(/cf-fonts/s/nunito/5.0.16/cyrillic-ext/700/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:optional;}@font-face {font-family:Nunito;font-style:normal;font-weight:700;src:url(/cf-fonts/s/nunito/5.0.16/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:optional;}@font-face {font-family:Nunito;font-style:normal;font-weight:700;src:url(/cf-fonts/s/nunito/5.0.16/vietnamese/700/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:optional;}</style>
+
+		<link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&amp;display=optional" as="style">
+		<style type="text/css">@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/400/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:optional;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin/400/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:optional;}@font-face {font-family:Poppins;font-style:normal;font-weight:400;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/400/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:optional;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/500/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:optional;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/latin/500/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:optional;}@font-face {font-family:Poppins;font-style:normal;font-weight:500;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/500/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:optional;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/600/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:optional;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/600/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:optional;}@font-face {font-family:Poppins;font-style:normal;font-weight:600;src:url(/cf-fonts/s/poppins/5.0.11/latin/600/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:optional;}@font-face {font-family:Poppins;font-style:normal;font-weight:700;src:url(/cf-fonts/s/poppins/5.0.11/latin-ext/700/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:optional;}@font-face {font-family:Poppins;font-style:normal;font-weight:700;src:url(/cf-fonts/s/poppins/5.0.11/devanagari/700/normal.woff2);unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;font-display:optional;}@font-face {font-family:Poppins;font-style:normal;font-weight:700;src:url(/cf-fonts/s/poppins/5.0.11/latin/700/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:optional;}</style>
+	
+			<link rel="preload" href="./styleenligne_files/logo-color-w3.png" as="image">
+	
+					
+				<link rel="canonical" href="https://fr.w3docs.com/apprendre-css/utilisation-de-css.html">
+	
+	<meta property="og:url" content="https://fr.w3docs.com/apprendre-css/utilisation-de-css.html">  <link rel="alternate" href="https://www.w3docs.com/learn-css/css-usage.html" hreflang="en">
+
+              <link rel="alternate" href="https://www.w3docs.com/learn-css/css-usage.html" hreflang="x-default">
+          <link rel="alternate" href="https://de.w3docs.com/css-lernen/gebrauch-von-css-mit-html.html" hreflang="de">
+
+          <link rel="alternate" href="https://fr.w3docs.com/apprendre-css/utilisation-de-css.html" hreflang="fr">
+
+            <meta property="og:type" content="article">
+	<meta property="og:title" content="Utilisation de CSS">
+	<meta property="og:description" content=" Les façons différentes d&#39;appliquer les styles CSS. ">
+	<meta property="og:image" content="https://fr.w3docs.com/uploads/media/book_gallery/0001/02/c8d75681dcd87da6f7d8ebfa0cdb40cbb403bed8.png">
+
+	  		<link rel="stylesheet" href="./styleenligne_files/tailwind.1de85fb9.css">
+	
+  <style></style>
+
+			<script src="./styleenligne_files/runtime.d971ef24.js.télécharger" defer=""></script><script src="./styleenligne_files/app.ab9ad4c2.js.télécharger" defer=""></script>
+
+			
+		<script async="" src="./styleenligne_files/f.txt" crossorigin="anonymous"></script>
+
+		<script async="" src="./styleenligne_files/pub-1328390942002432" nonce="sAgnPF9fmAxcS586OAv60Q"></script><script nonce="sAgnPF9fmAxcS586OAv60Q">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56G6JZ3"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div>
+				<div class="header-menu border-b border-gray-700">
+  <div>
+    <div class="fixed w-full h-16 flex z-50 print:hidden">
+      <div class="navbar flex justify-center border-b border-gray-700 text-lg" data-theme="dark">
+        <div class="navbar-start">
+          <a aria-label="logo" href="https://fr.w3docs.com/">
+            <img src="./styleenligne_files/logo-color-w3.png" alt="w3docs logo" width="146" height="41">
+          </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <div class="flex [&amp;&gt;*]:px-3 hover:[&amp;_a]:text-info hover:[&amp;_button]:text-info">
+  <div data-controller="dropdown" data-action="click-&gt;dropdown#toggle click@window-&gt;dropdown#hide keydown.up-&gt;dropdown#previousItem keydown.down-&gt;dropdown#nextItem keydown.esc-&gt;dropdown#hide">
+  <div class="relative inline-block">
+    <div role="button" tabindex="0" data-dropdown-target="button" class="inline-block select-none">
+      <span class="appearance-none flex items-center inline-block">
+        <span>Les livres</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="fill-current h-4 w-4"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+      </span>
+    </div>
+
+    <div data-dropdown-target="menu" data-transition-enter="transition ease-out duration-200" data-transition-enter-from="opacity-0 translate-y-1" data-transition-enter-to="opacity-100 translate-y-0" data-transition-leave="transition ease-in duration-150" data-transition-leave-from="opacity-100 translate-y-0" data-transition-leave-to="opacity-0 translate-y-1" class="hidden absolute -left-8 top-full z-10 mt-3 w-56 rounded-xl bg-slate-800 p-2 shadow-lg ring-1 ring-gray-900/5 opacity-0 translate-y-1">
+                  <a href="https://fr.w3docs.com/apprendre-html.html" class="block rounded-lg px-3 py-2">Apprendre HTML</a>
+                  <a href="https://fr.w3docs.com/apprendre-css.html" class="block rounded-lg px-3 py-2">Apprendre CSS</a>
+                  <a href="https://fr.w3docs.com/apprendre-javascript.html" class="block rounded-lg px-3 py-2">Apprendre Javascript</a>
+            </div>
+  </div>
+</div>
+
+
+  
+  <a href="https://fr.w3docs.com/nx/course">Cours</a>
+  <a href="https://fr.w3docs.com/quiz/">Questionnaires</a>
+  <a href="https://fr.w3docs.com/snippets">Snippets</a>
+
+  <div data-controller="dropdown" data-action="click-&gt;dropdown#toggle click@window-&gt;dropdown#hide keydown.up-&gt;dropdown#previousItem keydown.down-&gt;dropdown#nextItem keydown.esc-&gt;dropdown#hide">
+  <div>
+    <div role="button" tabindex="0" data-dropdown-target="button" class="inline-block select-none">
+      <span class="appearance-none flex items-center inline-block">
+        <span>Les outils</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="fill-current h-4 w-4"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+      </span>
+    </div>
+
+    <div data-dropdown-target="menu" data-transition-enter="transition ease-out duration-200" data-transition-enter-from="opacity-0 translate-y-1" data-transition-enter-to="opacity-100 translate-y-0" data-transition-leave="transition ease-in duration-150" data-transition-leave-from="opacity-100 translate-y-0" data-transition-leave-to="opacity-0 translate-y-1" class="hidden absolute inset-x-0 top-0 -z-10 pt-14 shadow-lg ring-1 ring-gray-900/5 bg-slate-800 opacity-0 translate-y-1">
+      <div class="mx-auto max-w-7xl grid grid-cols-4 gap-x-4 px-6 py-10 lg:px-8 xl:gap-x-8">
+                <div class="group relative rounded-lg p-6">
+          <div class="text-xl mb-4 font-bold text-primary">Outils généraux</div>
+          <ul class="text-base space-y-2">
+                          <li><a href="https://fr.w3docs.com/tools/password-generator">Générateur de code</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/editor">Éditeur HTML</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/html-encoder/">Encodeur HTML</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/image-base64">Convertisseur Base 64</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/code-diff/">Différence de Code</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/json-beautify">Embellisseur JSON</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/css-beautify">Formatteur CSS</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/marked">Convertisseur Markdown</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/tailwindcss-closest-color">Trouveur de Couleur Tailwind CSS</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/phrase-encrypt">Chiffrer/Déchiffrer par Phrase</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/feature-detection">Vérificateur de Support API JS</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/number/base-converter">Convertisseur de nombres</a></li>
+                      </ul>
+        </div>
+                <div class="group relative rounded-lg p-6">
+          <div class="text-xl mb-4 font-bold text-primary">Créateur CSS</div>
+          <ul class="text-base space-y-2">
+                          <li><a href="https://fr.w3docs.com/nx/css-maker/border-radius">Créateur de CSS</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/css-maker/text-shadow">Créateur d'Ombre de Texte CSS</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/css-maker/text-rotation">Créateur de Rotation de Texte CSS</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/css-maker/outline-tool">Créateur de Contour CSS</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/css-maker/rgba-shadow">Créateur d'Ombre RGB CSS</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/css-maker/transform-tool">Créateur de Transformation CSS</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/css-maker/font-face">Créateur de Police CSS</a></li>
+                      </ul>
+        </div>
+                <div class="group relative rounded-lg p-6">
+          <div class="text-xl mb-4 font-bold text-primary">Outils de couleur</div>
+          <ul class="text-base space-y-2">
+                          <li><a href="https://fr.w3docs.com/nx/color/color-picker">Pipette de couleur</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/color/color-cmyk">Couleurs CMYK</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/color/color-hwb">Couleurs HWB</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/color/color-hsl">Couleurs HSL</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/color/color-hex">Couleur Hex</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/color/color-mixer">Mélangeur de Couleurs</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/color/color-converter">Convertisseur de Couleurs</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/color/color-rgb">Couleur RGB</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/color/contrast-ratio">Vérificateur de Contraste de Couleur</a></li>
+                          <li><a href="https://fr.w3docs.com/nx/color/gradient-background">Dégradé de Couleur</a></li>
+                      </ul>
+        </div>
+        
+        <div class="group relative rounded-lg p-6">
+          <div class="text-xl mb-4 font-bold text-primary">Outils de chaîne</div>
+          <ul class="text-base space-y-2">
+                          <li><a href="https://fr.w3docs.com/tools/string-length-calculator">Calculateur de Longueur</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-md5-generator">Outil Hash MD5</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-sha256-generator">Outil Hash SHA256</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-revers">Outil Inverseur</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-url-encoder">Encodeur d'URL</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-url-decoder">Décodeur URL</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-base64-encoder">Encodeur Base64</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-base64-decoder">Décodeur Base64</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-remove-extra-spaces">Suppresseur d'Espaces</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-convert-lowercase">Convertisseur en Minuscules</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-convert-uppercase">Convertisseur en Majuscules</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-word-count">Compteur de Mots</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-remove-empty-lines">Décapant des Lignes Vides</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-remove-tags">Nettoyeur HTML</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-bin-2-hex">Convertisseur Binaire en Hex</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-hex-2-bin">Décodeur Binaire Hex</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-convert-rot-13">Convertisseur Rot13</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-convert-to-bin">Texte en Binaire</a></li>
+                          <li><a href="https://fr.w3docs.com/tools/string-remove-double-line">Suppresseur de Doublons</a></li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+        </div>
+        <div class="navbar-end">
+          <form role="search" action="https://fr.w3docs.com/search" method="get" target="_top" aria-label="search form" class="hidden sm:inline-block">
+  <input class="bg-slate-700 hover:bg-slate-600 outline-0 border-0 focus:ring-0 px-2 py-1 rounded-full pl-4 text-slate-400 dark:bg-slate-800 dark:highlight-white/5 dark:hover:bg-slate-700" type="search" name="q" required="" aria-label="search input" placeholder="Rechercher">
+</form>
+
+
+          <div class="hidden md:block min-w-20" data-controller="locale-switcher">
+            <!-- The dropdown will be dynamically inserted here by the Stimulus controller -->
+          <div class="dropdown dropdown-end"><label tabindex="0" class="btn btn-ghost mx-1">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M11 5a.75.75 0 0 1 .688.452l3.25 7.5a.75.75 0 1 1-1.376.596L12.89 12H9.109l-.67 1.548a.75.75 0 1 1-1.377-.596l3.25-7.5A.75.75 0 0 1 11 5Zm-1.24 5.5h2.48L11 7.636 9.76 10.5ZM5 1a.75.75 0 0 1 .75.75v1.261a25.27 25.27 0 0 1 2.598.211.75.75 0 1 1-.2 1.487c-.22-.03-.44-.056-.662-.08A12.939 12.939 0 0 1 5.92 8.058c.237.304.488.595.752.873a.75.75 0 0 1-1.086 1.035A13.075 13.075 0 0 1 5 9.307a13.068 13.068 0 0 1-2.841 2.546.75.75 0 0 1-.827-1.252A11.566 11.566 0 0 0 4.08 8.057a12.991 12.991 0 0 1-.554-.938.75.75 0 1 1 1.323-.707c.049.09.099.181.15.271.388-.68.708-1.405.952-2.164a23.941 23.941 0 0 0-4.1.19.75.75 0 0 1-.2-1.487c.853-.114 1.72-.185 2.598-.211V1.75A.75.75 0 0 1 5 1Z" clip-rule="evenodd"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="fill-current h-4 w-4"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+    </label><ul class="dropdown-content menu p-2 shadow bg-slate-800 rounded-box w-20"><li><a href="https://www.w3docs.com/learn-css/css-usage.html" data-action="locale-switcher#switch">EN</a></li><li><a href="https://de.w3docs.com/css-lernen/gebrauch-von-css-mit-html.html" data-action="locale-switcher#switch">DE</a></li><li><a href="https://fr.w3docs.com/apprendre-css/utilisation-de-css.html" data-action="locale-switcher#switch">FR</a></li></ul></div></div>
+
+          <div data-controller="dropdown" data-action="click-&gt;dropdown#toggle click@window-&gt;dropdown#hide keydown.up-&gt;dropdown#previousItem keydown.down-&gt;dropdown#nextItem keydown.esc-&gt;dropdown#hide">
+  <div class="relative inline-block">
+    <div role="button" tabindex="0" data-dropdown-target="button" class="inline-block select-none">
+      <span class="appearance-none items-center inline-block">
+        <button tabindex="0" class="btn btn-ghost mx-1" aria-label="Change theme">
+          <span class="hidden dark:inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"></path>
+</svg>
+
+          </span>
+          <span class="inline-block dark:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
+</svg>
+
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="fill-current h-4 w-4"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+          <span class="sr-only">Change theme</span>
+        </button>
+      </span>
+    </div>
+
+    <div data-dropdown-target="menu" data-transition-enter="transition ease-out duration-200" data-transition-enter-from="opacity-0 translate-y-1" data-transition-enter-to="opacity-100 translate-y-0" data-transition-leave="transition ease-in duration-150" data-transition-leave-from="opacity-100 translate-y-0" data-transition-leave-to="opacity-0 translate-y-1" class="hidden absolute right-0 top-full z-10 rounded-xl bg-slate-800 p-2 shadow-lg ring-1 ring-gray-900/5 mt-2 opacity-0 translate-y-1">
+      <ul tabindex="0" class="dropdown-content menu p-2 hover:[&amp;&gt;li&gt;a]:text-info" data-controller="theme">
+        <li>
+          <button data-action="theme#dark"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"></path>
+</svg>
+ Dark</button>
+        </li>
+        <li>
+          <button data-action="theme#light">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
+</svg>
+ Light</button>
+        </li>
+        <li>
+          <button data-action="theme#system">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"></path>
+</svg>
+ System</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+				<div class="hidden xl:block fixed w-60 pt-16 h-full z-10 overflow-auto left-aside" data-theme="dark">
+			<div class="fixed h-full overflow-y-auto px-4 pb-36 pt-4">
+				  <nav class="chapter-left-menu left-menu"><ul class="w-52 hover:[&amp;&gt;li&gt;a]:text-info"><li class="flex flex-col gap-1.5"><strong class="pt-9 text-lg font-bold">
+              Bases CSS
+            </strong><div class="divider"></div><a href="https://fr.w3docs.com/apprendre-css/introduction-au-css.html">Introduction au CSS</a><a href="https://fr.w3docs.com/apprendre-css/utilisation-de-css.html" class="text-info scroll-to scroll-mt-32">Utilisation de CSS</a><a href="https://fr.w3docs.com/apprendre-css/syntaxe-css.html">Syntaxe CSS</a><a href="https://fr.w3docs.com/apprendre-css/identifiant-et-classe-css.html">Identifiant et classe CSS</a><a href="https://fr.w3docs.com/apprendre-css/texte-css.html">Texte CSS</a><a href="https://fr.w3docs.com/apprendre-css/police-css.html">Police CSS</a><a href="https://fr.w3docs.com/apprendre-css/liens-css.html">Liens CSS</a><a href="https://fr.w3docs.com/apprendre-css/tableaux-css.html">Tableaux CSS</a><a href="https://fr.w3docs.com/apprendre-css/bordure-css.html">Bordure CSS</a><a href="https://fr.w3docs.com/apprendre-css/remplissage-css.html">Remplissage CSS</a><a href="https://fr.w3docs.com/apprendre-css/marge-css.html">Marge CSS</a><a href="https://fr.w3docs.com/apprendre-css/noms-de-couleurs-css.html">Noms de couleurs CSS</a></li><li class="flex flex-col gap-1.5"><strong class="pt-9 text-lg font-bold">
+              Guides CSS
+            </strong><div class="divider"></div><a href="https://fr.w3docs.com/apprendre-css/the-ultimate-guide-to-flexbox.html">Le guide ultime de Flexbox</a><a href="https://fr.w3docs.com/apprendre-css/les-proprietes-css3.html">Les propriétés CSS3</a></li><li class="flex flex-col gap-1.5"><strong class="pt-9 text-lg font-bold">
+              Sélecteurs CSS
+            </strong><div class="divider"></div><a href="https://fr.w3docs.com/apprendre-css/active.html">:active</a><a href="https://fr.w3docs.com/apprendre-css/after.html">::after</a><a href="https://fr.w3docs.com/apprendre-css/before.html">::before</a><a href="https://fr.w3docs.com/apprendre-css/hover.html">:hover</a><a href="https://fr.w3docs.com/apprendre-css/selection.html">::selection</a><a href="https://fr.w3docs.com/apprendre-css/first-letter.html">::first-letter</a><a href="https://fr.w3docs.com/apprendre-css/checked.html">:checked</a><a href="https://fr.w3docs.com/apprendre-css/empty.html">:empty</a><a href="https://fr.w3docs.com/apprendre-css/link.html">:link</a><a href="https://fr.w3docs.com/apprendre-css/visited.html">:visited</a><a href="https://fr.w3docs.com/apprendre-css/default.html">:default</a><a href="https://fr.w3docs.com/apprendre-css/disabled.html">:disabled</a><a href="https://fr.w3docs.com/apprendre-css/enabled.html">:enabled</a><a href="https://fr.w3docs.com/apprendre-css/first-child.html">:first-child</a><a href="https://fr.w3docs.com/apprendre-css/invalid.html">:invalid</a><a href="https://fr.w3docs.com/apprendre-css/first-of-type.html">:first-of-type</a><a href="https://fr.w3docs.com/apprendre-css/first-line.html">::first-line</a><a href="https://fr.w3docs.com/apprendre-css/valid.html">:valid</a><a href="https://fr.w3docs.com/apprendre-css/nth-child.html">:nth-child()</a><a href="https://fr.w3docs.com/apprendre-css/indeterminate.html">:indeterminate</a><a href="https://fr.w3docs.com/apprendre-css/in-range.html">:in-range</a><a href="https://fr.w3docs.com/apprendre-css/focus.html">:focus</a><a href="https://fr.w3docs.com/apprendre-css/nth-of-type.html">:nth-of-type()</a><a href="https://fr.w3docs.com/apprendre-css/nth-last-child.html">:nth-last-child</a><a href="https://fr.w3docs.com/apprendre-css/not.html">:not()</a><a href="https://fr.w3docs.com/apprendre-css/last-child.html">:last-child</a><a href="https://fr.w3docs.com/apprendre-css/last-of-type.html">:last-of-type</a><a href="https://fr.w3docs.com/apprendre-css/nth-last-of-type.html">:nth-last-of-type()</a><a href="https://fr.w3docs.com/apprendre-css/lang.html">:lang()</a><a href="https://fr.w3docs.com/apprendre-css/read-only.html">:read-only</a><a href="https://fr.w3docs.com/apprendre-css/required.html">:required</a><a href="https://fr.w3docs.com/apprendre-css/optional.html">:optional</a><a href="https://fr.w3docs.com/apprendre-css/only-child.html">:only-child</a><a href="https://fr.w3docs.com/apprendre-css/target.html">:target</a><a href="https://fr.w3docs.com/apprendre-css/root.html">:root</a><a href="https://fr.w3docs.com/apprendre-css/only-of-type.html">:only-of-type</a><a href="https://fr.w3docs.com/apprendre-css/read-write.html">:read-write</a><a href="https://fr.w3docs.com/apprendre-css/scope.html">:scope</a><a href="https://fr.w3docs.com/apprendre-css/selecteur-css.html">*</a><a href="https://fr.w3docs.com/apprendre-css/dir.html">:dir()</a><a href="https://fr.w3docs.com/apprendre-css/out-of-range.html">:out-of-range</a><a href="https://fr.w3docs.com/apprendre-css/placeholder.html">::placeholder</a><a href="https://fr.w3docs.com/apprendre-css/fullscreen.html">:fullscreen</a></li><li class="flex flex-col gap-1.5"><strong class="pt-9 text-lg font-bold">
+              Propriétés CSS
+            </strong><div class="divider"></div><a href="https://fr.w3docs.com/apprendre-css/align-content.html">align-content</a><a href="https://fr.w3docs.com/apprendre-css/align-items.html">align-items</a><a href="https://fr.w3docs.com/apprendre-css/align-self.html">align-self</a><a href="https://fr.w3docs.com/apprendre-css/animation.html">animation</a><a href="https://fr.w3docs.com/apprendre-css/all.html">all</a><a href="https://fr.w3docs.com/apprendre-css/css-background.html">background</a><a href="https://fr.w3docs.com/apprendre-css/animation-delay.html">animation-delay</a><a href="https://fr.w3docs.com/apprendre-css/background-attachment.html">background-attachment</a><a href="https://fr.w3docs.com/apprendre-css/animation-direction.html">animation-direction</a><a href="https://fr.w3docs.com/apprendre-css/background-clip.html">background-clip</a><a href="https://fr.w3docs.com/apprendre-css/animation-duration.html">animation-duration</a><a href="https://fr.w3docs.com/apprendre-css/background-color.html">background-color</a><a href="https://fr.w3docs.com/apprendre-css/animation-fill-mode.html">animation-fill-mode</a><a href="https://fr.w3docs.com/apprendre-css/background-image.html">background-image</a><a href="https://fr.w3docs.com/apprendre-css/animation-iteration-countanimation-iteration-count.html">animation-iteration-count</a><a href="https://fr.w3docs.com/apprendre-css/background-position.html">background-position</a><a href="https://fr.w3docs.com/apprendre-css/animation-name.html">animation-name</a><a href="https://fr.w3docs.com/apprendre-css/background-repeat.html">background-repeat</a><a href="https://fr.w3docs.com/apprendre-css/animation-play-state.html">animation-play-state</a><a href="https://fr.w3docs.com/apprendre-css/background-origin.html">background-origin</a><a href="https://fr.w3docs.com/apprendre-css/background-size.html">background-size</a><a href="https://fr.w3docs.com/apprendre-css/animation-timing-function.html">animation-timing-function</a><a href="https://fr.w3docs.com/apprendre-css/propriete-css-appearance.html">appearance</a><a href="https://fr.w3docs.com/apprendre-css/propriete-css-border.html">border</a><a href="https://fr.w3docs.com/apprendre-css/border-bottom.html">border-bottom</a><a href="https://fr.w3docs.com/apprendre-css/backface-visibility.html">backface-visibility</a><a href="https://fr.w3docs.com/apprendre-css/border-bottom-color.html">border-bottom-color</a><a href="https://fr.w3docs.com/apprendre-css/border-bottom-left-radius.html">border-bottom-left-radius</a><a href="https://fr.w3docs.com/apprendre-css/border-bottom-right-radius.html">border-bottom-right-radius</a><a href="https://fr.w3docs.com/apprendre-css/border-bottom-style.html">border-bottom-style</a><a href="https://fr.w3docs.com/apprendre-css/border-bottom-width.html">border-bottom-width</a><a href="https://fr.w3docs.com/apprendre-css/border-collapse.html">border-collapse</a><a href="https://fr.w3docs.com/apprendre-css/border-color.html">border-color</a><a href="https://fr.w3docs.com/apprendre-css/bleed.html">bleed</a><a href="https://fr.w3docs.com/apprendre-css/border-image-slice.html">border-image-slice</a><a href="https://fr.w3docs.com/apprendre-css/block-overflow.html">block-overflow</a><a href="https://fr.w3docs.com/apprendre-css/border-image-width.html">border-image-width</a><a href="https://fr.w3docs.com/apprendre-css/border-left.html">border-left</a><a href="https://fr.w3docs.com/apprendre-css/background-blend-mode.html">background-blend-mode</a><a href="https://fr.w3docs.com/apprendre-css/border-left-color.html">border-left-color</a><a href="https://fr.w3docs.com/apprendre-css/border-left-style.html">border-left-style</a><a href="https://fr.w3docs.com/apprendre-css/border-left-width.html">border-left-width</a><a href="https://fr.w3docs.com/apprendre-css/border-radius.html">border-radius</a><a href="https://fr.w3docs.com/apprendre-css/border-right.html">border-right</a><a href="https://fr.w3docs.com/apprendre-css/border-right-color.html">border-right-color</a><a href="https://fr.w3docs.com/apprendre-css/border-right-style.html">border-right-style</a><a href="https://fr.w3docs.com/apprendre-css/border-image.html">border-image</a><a href="https://fr.w3docs.com/apprendre-css/border-right-width.html">border-right-width</a><a href="https://fr.w3docs.com/apprendre-css/border-image-repeat.html">border-image-repeat</a><a href="https://fr.w3docs.com/apprendre-css/border-spacing.html">border-spacing</a><a href="https://fr.w3docs.com/apprendre-css/border-style.html">border-style</a><a href="https://fr.w3docs.com/apprendre-css/border-top.html">border-top</a><a href="https://fr.w3docs.com/apprendre-css/border-top-color.html">border-top-color</a><a href="https://fr.w3docs.com/apprendre-css/border-top-left-radius.html">border-top-left-radius</a><a href="https://fr.w3docs.com/apprendre-css/border-top-right-radius.html">border-top-right-radius</a></li><li class="flex flex-col gap-1.5"><a href="https://fr.w3docs.com/apprendre-css/border-top-style.html">border-top-style</a><a href="https://fr.w3docs.com/apprendre-css/border-top-width.html">border-top-width</a><a href="https://fr.w3docs.com/apprendre-css/border-width.html">border-width</a><a href="https://fr.w3docs.com/apprendre-css/bottom.html">bottom</a><a href="https://fr.w3docs.com/apprendre-css/box-shadow.html">box-shadow</a><a href="https://fr.w3docs.com/apprendre-css/box-sizing.html">box-sizing</a><a href="https://fr.w3docs.com/apprendre-css/caption-side.html">caption-side</a><a href="https://fr.w3docs.com/apprendre-css/clear.html">clear</a><a href="https://fr.w3docs.com/apprendre-css/color.html">color</a><a href="https://fr.w3docs.com/apprendre-css/content.html">content</a><a href="https://fr.w3docs.com/apprendre-css/counter-reset.html">counter-reset</a><a href="https://fr.w3docs.com/apprendre-css/cursor.html">cursor</a><a href="https://fr.w3docs.com/apprendre-css/box-decoration-break.html">box-decoration-break</a><a href="https://fr.w3docs.com/apprendre-css/direction.html">direction</a><a href="https://fr.w3docs.com/apprendre-css/display.html">display</a><a href="https://fr.w3docs.com/apprendre-css/empty-cells.html">empty-cells</a><a href="https://fr.w3docs.com/apprendre-css/flex.html">flex</a><a href="https://fr.w3docs.com/apprendre-css/break-after.html">break-after</a><a href="https://fr.w3docs.com/apprendre-css/flex-basis.html">flex-basis</a><a href="https://fr.w3docs.com/apprendre-css/propriete-css-break-before.html">break-before</a><a href="https://fr.w3docs.com/apprendre-css/flex-direction.html">flex-direction</a><a href="https://fr.w3docs.com/apprendre-css/break-inside.html">break-inside</a><a href="https://fr.w3docs.com/apprendre-css/flex-flow.html">flex-flow</a><a href="https://fr.w3docs.com/apprendre-css/flex-grow.html">flex-grow</a><a href="https://fr.w3docs.com/apprendre-css/caret-color.html">caret-color</a><a href="https://fr.w3docs.com/apprendre-css/charset.html">@charset</a><a href="https://fr.w3docs.com/apprendre-css/flex-shrink.html">flex-shrink</a><a href="https://fr.w3docs.com/apprendre-css/flex-wrap.html">flex-wrap</a><a href="https://fr.w3docs.com/apprendre-css/clip.html">clip</a><a href="https://fr.w3docs.com/apprendre-css/float.html">float</a><a href="https://fr.w3docs.com/apprendre-css/font.html">font</a><a href="https://fr.w3docs.com/apprendre-css/clip-path.html">clip-path</a><a href="https://fr.w3docs.com/apprendre-css/column-count.html">column-count</a><a href="https://fr.w3docs.com/apprendre-css/font-family.html">font-family</a><a href="https://fr.w3docs.com/apprendre-css/column-fill.html">column-fill</a><a href="https://fr.w3docs.com/apprendre-css/font-size.html">font-size</a><a href="https://fr.w3docs.com/apprendre-css/column-gap.html">column-gap</a><a href="https://fr.w3docs.com/apprendre-css/column-rule.html">column-rule</a><a href="https://fr.w3docs.com/apprendre-css/font-stretch.html">font-stretch</a><a href="https://fr.w3docs.com/apprendre-css/font-style.html">font-style</a><a href="https://fr.w3docs.com/apprendre-css/column-rule-color.html">column-rule-color</a><a href="https://fr.w3docs.com/apprendre-css/column-rule-style.html">column-rule-style</a><a href="https://fr.w3docs.com/apprendre-css/font-variant.html">font-variant</a><a href="https://fr.w3docs.com/apprendre-css/column-rule-width.html">column-rule-width</a><a href="https://fr.w3docs.com/apprendre-css/font-weight.html">font-weight</a><a href="https://fr.w3docs.com/apprendre-css/column-span.html">column-span</a><a href="https://fr.w3docs.com/apprendre-css/column-width.html">column-width</a><a href="https://fr.w3docs.com/apprendre-css/height.html">height</a><a href="https://fr.w3docs.com/apprendre-css/columns.html">columns</a><a href="https://fr.w3docs.com/apprendre-css/counter-increment.html">counter-increment</a><a href="https://fr.w3docs.com/apprendre-css/left.html">left</a><a href="https://fr.w3docs.com/apprendre-css/letter-spacing.html">letter-spacing</a><a href="https://fr.w3docs.com/apprendre-css/line-height.html">line-height</a><a href="https://fr.w3docs.com/apprendre-css/list-style.html">list-style</a><a href="https://fr.w3docs.com/apprendre-css/list-style-image.html">list-style-image</a></li><li class="flex flex-col gap-1.5"><a href="https://fr.w3docs.com/apprendre-css/fill.html">fill</a><a href="https://fr.w3docs.com/apprendre-css/list-style-position.html">list-style-position</a><a href="https://fr.w3docs.com/apprendre-css/filter.html">filter</a><a href="https://fr.w3docs.com/apprendre-css/list-style-type.html">list-style-type</a><a href="https://fr.w3docs.com/apprendre-css/font-face.html">@font-face</a><a href="https://fr.w3docs.com/apprendre-css/font-display.html">font-display</a><a href="https://fr.w3docs.com/apprendre-css/font-feature-settings.html">font-feature-settings</a><a href="https://fr.w3docs.com/apprendre-css/font-feature-values.html">font-feature-values</a><a href="https://fr.w3docs.com/apprendre-css/font-kerning.html">font-kerning</a><a href="https://fr.w3docs.com/apprendre-css/font-size-adjust.html">font-size-adjust</a><a href="https://fr.w3docs.com/apprendre-css/font-language-override.html">font-language-override</a><a href="https://fr.w3docs.com/apprendre-css/hanging-punctuation.html">hanging-punctuation</a><a href="https://fr.w3docs.com/apprendre-css/font-variant-alternates.html">font-variant-alternates</a><a href="https://fr.w3docs.com/apprendre-css/font-variant-caps.html">font-variant-caps</a><a href="https://fr.w3docs.com/apprendre-css/keyframes.html">@keyframes</a><a href="https://fr.w3docs.com/apprendre-css/font-variant-east-asian.html">font-variant-east-asian</a><a href="https://fr.w3docs.com/apprendre-css/font-variant-ligatures.html">font-variant-ligatures</a><a href="https://fr.w3docs.com/apprendre-css/font-variant-numeric.html">font-variant-numeric</a><a href="https://fr.w3docs.com/apprendre-css/grid-area.html">grid-area</a><a href="https://fr.w3docs.com/apprendre-css/grid-auto-columns.html">grid-auto-columns</a><a href="https://fr.w3docs.com/apprendre-css/grid-auto-flow.html">grid-auto-flow</a><a href="https://fr.w3docs.com/apprendre-css/grid-auto-rows.html">grid-auto-rows</a><a href="https://fr.w3docs.com/apprendre-css/grid-column.html">grid-column</a><a href="https://fr.w3docs.com/apprendre-css/grid-column-end.html">grid-column-end</a><a href="https://fr.w3docs.com/apprendre-css/margin.html">margin</a><a href="https://fr.w3docs.com/apprendre-css/margin-bottom.html">margin-bottom</a><a href="https://fr.w3docs.com/apprendre-css/grid.html">grid</a><a href="https://fr.w3docs.com/apprendre-css/margin-left.html">margin-left</a><a href="https://fr.w3docs.com/apprendre-css/grid-column-start.html">grid-column-start</a><a href="https://fr.w3docs.com/apprendre-css/margin-right.html">margin-right</a><a href="https://fr.w3docs.com/apprendre-css/margin-top.html">margin-top</a><a href="https://fr.w3docs.com/apprendre-css/grid-row.html">grid-row</a><a href="https://fr.w3docs.com/apprendre-css/max-height.html">max-height</a><a href="https://fr.w3docs.com/apprendre-css/grid-row-end.html">grid-row-end</a><a href="https://fr.w3docs.com/apprendre-css/max-width.html">max-width</a><a href="https://fr.w3docs.com/apprendre-css/min-height.html">min-height</a><a href="https://fr.w3docs.com/apprendre-css/transition.html">transition</a><a href="https://fr.w3docs.com/apprendre-css/grid-row-start.html">grid-row-start</a><a href="https://fr.w3docs.com/apprendre-css/min-width.html">min-width</a><a href="https://fr.w3docs.com/apprendre-css/padding.html">padding</a><a href="https://fr.w3docs.com/apprendre-css/padding-bottom.html">padding-bottom</a><a href="https://fr.w3docs.com/apprendre-css/grid-template-rows.html">grid-template-rows</a><a href="https://fr.w3docs.com/apprendre-css/padding-left.html">padding-left</a><a href="https://fr.w3docs.com/apprendre-css/padding-right.html">padding-right</a><a href="https://fr.w3docs.com/apprendre-css/import.html">@import</a><a href="https://fr.w3docs.com/apprendre-css/hyphens.html">hyphens</a><a href="https://fr.w3docs.com/apprendre-css/image-rendering.html">image-rendering</a><a href="https://fr.w3docs.com/apprendre-css/padding-top.html">padding-top</a><a href="https://fr.w3docs.com/apprendre-css/right.html">right</a><a href="https://fr.w3docs.com/apprendre-css/propriete-css-text-align.html">text-align</a><a href="https://fr.w3docs.com/apprendre-css/justify-content.html">justify-content</a><a href="https://fr.w3docs.com/apprendre-css/text-decoration.html">text-decoration</a><a href="https://fr.w3docs.com/apprendre-css/text-indent.html">text-indent</a><a href="https://fr.w3docs.com/apprendre-css/text-shadow.html">text-shadow</a><a href="https://fr.w3docs.com/apprendre-css/line-clamp.html">line-clamp</a></li><li class="flex flex-col gap-1.5"><a href="https://fr.w3docs.com/apprendre-css/line-break.html">line-break</a><a href="https://fr.w3docs.com/apprendre-css/text-transform.html">text-transform</a><a href="https://fr.w3docs.com/apprendre-css/top.html">top</a><a href="https://fr.w3docs.com/apprendre-css/vertical-align.html">vertical-align</a><a href="https://fr.w3docs.com/apprendre-css/visibility.html">visibility</a><a href="https://fr.w3docs.com/apprendre-css/white-space.html">white-space</a><a href="https://fr.w3docs.com/apprendre-css/width.html">width</a><a href="https://fr.w3docs.com/apprendre-css/word-spacing.html">word-spacing</a><a href="https://fr.w3docs.com/apprendre-css/z-index.html">z-index</a><a href="https://fr.w3docs.com/apprendre-css/max-lines.html">max-lines</a><a href="https://fr.w3docs.com/apprendre-css/media.html">@media</a><a href="https://fr.w3docs.com/apprendre-css/object-fit.html">object-fit</a><a href="https://fr.w3docs.com/apprendre-css/mix-blend-mode.html">mix-blend-mode</a><a href="https://fr.w3docs.com/apprendre-css/object-position.html">object-position</a><a href="https://fr.w3docs.com/apprendre-css/grid-column-gap.html">grid-column-gap</a><a href="https://fr.w3docs.com/apprendre-css/offset-anchor.html">offset-anchor</a><a href="https://fr.w3docs.com/apprendre-css/offset.html">offset</a><a href="https://fr.w3docs.com/apprendre-css/grid-gap.html">grid-gap</a><a href="https://fr.w3docs.com/apprendre-css/offset-distance.html">offset-distance</a><a href="https://fr.w3docs.com/apprendre-css/offset-path.html">offset-path</a><a href="https://fr.w3docs.com/apprendre-css/opacity.html">opacity</a><a href="https://fr.w3docs.com/apprendre-css/offset-rotate.html">offset-rotate</a><a href="https://fr.w3docs.com/apprendre-css/offset-position.html">offset-position</a><a href="https://fr.w3docs.com/apprendre-css/order.html">order</a><a href="https://fr.w3docs.com/apprendre-css/grid-row-gap.html">grid-row-gap</a><a href="https://fr.w3docs.com/apprendre-css/orphans.html">orphans</a><a href="https://fr.w3docs.com/apprendre-css/grid-template.html">grid-template</a><a href="https://fr.w3docs.com/apprendre-css/outline-color.html">outline-color</a><a href="https://fr.w3docs.com/apprendre-css/grid-template-areas.html">grid-template-areas</a><a href="https://fr.w3docs.com/apprendre-css/grid-template-columns.html">grid-template-columns</a><a href="https://fr.w3docs.com/apprendre-css/outline-style.html">outline-style</a><a href="https://fr.w3docs.com/apprendre-css/outline-width.html">outline-width</a><a href="https://fr.w3docs.com/apprendre-css/initial-letter.html">initial-letter</a><a href="https://fr.w3docs.com/apprendre-css/outline-offset.html">outline-offset</a><a href="https://fr.w3docs.com/apprendre-css/isolation.html">isolation</a><a href="https://fr.w3docs.com/apprendre-css/overflow.html">overflow</a><a href="https://fr.w3docs.com/apprendre-css/overflow-anchor.html">overflow-anchor</a><a href="https://fr.w3docs.com/apprendre-css/outline.html">outline</a><a href="https://fr.w3docs.com/apprendre-css/overflow-wrap.html">overflow-wrap</a><a href="https://fr.w3docs.com/apprendre-css/overflow-x.html">overflow-x</a><a href="https://fr.w3docs.com/apprendre-css/overflow-y.html">overflow-y</a><a href="https://fr.w3docs.com/apprendre-css/page-break-before.html">page-break-before</a><a href="https://fr.w3docs.com/apprendre-css/page-break-after.html">page-break-after</a><a href="https://fr.w3docs.com/apprendre-css/page-break-inside.html">page-break-inside</a><a href="https://fr.w3docs.com/apprendre-css/page-break.html">page-break</a><a href="https://fr.w3docs.com/apprendre-css/perspective.html">perspective</a><a href="https://fr.w3docs.com/apprendre-css/perspective-origin.html">perspective-origin</a><a href="https://fr.w3docs.com/apprendre-css/place-items.html">place-items</a><a href="https://fr.w3docs.com/apprendre-css/pointer-events.html">pointer-events</a><a href="https://fr.w3docs.com/apprendre-css/position.html">position</a><a href="https://fr.w3docs.com/apprendre-css/quotes.html">quotes</a><a href="https://fr.w3docs.com/apprendre-css/resize.html">resize</a><a href="https://fr.w3docs.com/apprendre-css/scroll-behavior.html">scroll-behavior</a><a href="https://fr.w3docs.com/apprendre-css/scrollbar.html">scrollbar</a><a href="https://fr.w3docs.com/apprendre-css/shape-outside.html">shape-outside</a></li><li class="flex flex-col gap-1.5"><a href="https://fr.w3docs.com/apprendre-css/speak.html">speak</a><a href="https://fr.w3docs.com/apprendre-css/stroke.html">stroke</a><a href="https://fr.w3docs.com/apprendre-css/stroke-dasharray.html">stroke-dasharray</a><a href="https://fr.w3docs.com/apprendre-css/stroke-dashoffset.html">stroke-dashoffset</a><a href="https://fr.w3docs.com/apprendre-css/propriete-css-stroke-linecap.html">stroke-linecap</a><a href="https://fr.w3docs.com/apprendre-css/stroke-width.html">stroke-width</a><a href="https://fr.w3docs.com/apprendre-css/tab-size.html">tab-size</a><a href="https://fr.w3docs.com/apprendre-css/table-layout.html">table-layout</a><a href="https://fr.w3docs.com/apprendre-css/text-align-last.html">text-align-last</a><a href="https://fr.w3docs.com/apprendre-css/text-combine-upright.html">text-combine-upright</a><a href="https://fr.w3docs.com/apprendre-css/propriete-css-text-decoration-color.html">text-decoration-color</a><a href="https://fr.w3docs.com/apprendre-css/text-decoration-linet.html">text-decoration-line</a><a href="https://fr.w3docs.com/apprendre-css/text-decoration-skip.html">text-decoration-skip</a><a href="https://fr.w3docs.com/apprendre-css/text-decoration-skip-ink.html">text-decoration-skip-ink</a><a href="https://fr.w3docs.com/apprendre-css/text-decoration-style.html">text-decoration-style</a><a href="https://fr.w3docs.com/apprendre-css/text-orientation.html">text-orientation</a><a href="https://fr.w3docs.com/apprendre-css/text-justify.html">text-justify</a><a href="https://fr.w3docs.com/apprendre-css/text-overflow.html">text-overflow</a><a href="https://fr.w3docs.com/apprendre-css/transform.html">transform</a><a href="https://fr.w3docs.com/apprendre-css/text-rendering.html">text-rendering</a><a href="https://fr.w3docs.com/apprendre-css/text-stroke.html">text-stroke</a><a href="https://fr.w3docs.com/apprendre-css/text-stroke-color.html">text-stroke-color</a><a href="https://fr.w3docs.com/apprendre-css/text-stroke-width.html">text-stroke-width</a><a href="https://fr.w3docs.com/apprendre-css/text-underline-position.html">text-underline-position</a><a href="https://fr.w3docs.com/apprendre-css/transform-origin.html">transform-origin</a><a href="https://fr.w3docs.com/apprendre-css/transform-style.html">transform-style</a><a href="https://fr.w3docs.com/apprendre-css/transition-delay.html">transition-delay</a><a href="https://fr.w3docs.com/apprendre-css/transition-property.html">transition-property</a><a href="https://fr.w3docs.com/apprendre-css/transition-duration.html">transition-duration</a><a href="https://fr.w3docs.com/apprendre-css/transition-timing-function.html">transition-timing-function</a><a href="https://fr.w3docs.com/apprendre-css/unicode-bidi.html">unicode-bidi</a><a href="https://fr.w3docs.com/apprendre-css/user-select.html">user-select</a><a href="https://fr.w3docs.com/apprendre-css/unicode-range.html">Unicode-range</a><a href="https://fr.w3docs.com/apprendre-css/widows.html">widows</a><a href="https://fr.w3docs.com/apprendre-css/word-break.html">word-break</a><a href="https://fr.w3docs.com/apprendre-css/word-wrap.html">word-wrap</a><a href="https://fr.w3docs.com/apprendre-css/writing-mode.html">writing-mode</a><a href="https://fr.w3docs.com/apprendre-css/will-change.html">will-change</a><a href="https://fr.w3docs.com/apprendre-css/zoom.html">zoom</a><a href="https://fr.w3docs.com/apprendre-css/justify-items.html">justify-items</a><a href="https://fr.w3docs.com/apprendre-css/background-position-y.html">background-position-y</a><a href="https://fr.w3docs.com/apprendre-css/background-position-x.html">background-position-x</a><a href="https://fr.w3docs.com/apprendre-css/border-image-source.html">border-image-source</a><a href="https://fr.w3docs.com/apprendre-css/border-image-outset.html">border-image-outset</a><a href="https://fr.w3docs.com/apprendre-css/text-fill-color.html">text-fill-color</a></li></ul><script>
+    document.querySelector('.scroll-to').scrollIntoView()
+  </script></nav>			</div>
+		</div>
+	
+	<div class="xl:ml-60 pt-16 min-h-screen">
+
+		<div class="grid grid-cols-12 gap-4">
+			<div class="col-span-12 md:col-span-9 scroll-pt-16">
+					<div class="print:text-black print:bg-white">
+										  <div class="p-4 md:p-8">
+    <div class="mb-4 print:hidden hidden lg:block" style="min-height: 90px">
+  <script async="" src="./styleenligne_files/f.txt" crossorigin="anonymous"></script>
+  <!-- Horizontal Top Ad -->
+  <ins class="adsbygoogle top-ad-horizontal" style="display:inline-block" data-ad-client="ca-pub-1328390942002432" data-ad-slot="6072013702" data-adsbygoogle-status="done"><iframe id="aswift_0" style="height: 1px !important; max-height: 1px !important; max-width: 1px !important; width: 1px !important;" src="./styleenligne_files/saved_resource.html"><iframe id="google_ads_frame0" src="./styleenligne_files/saved_resource(1).html"></iframe></iframe></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({})
+  </script>
+</div>
+
+
+    <div>
+  <div itemprop="articleBody">
+    <div class="chapter-container prose lg:prose-lg hover:prose-a:text-info max-w-none main-content">
+      <div class="mt-4 mb-0 md:mt-0">
+        <h1 itemprop="name">
+          Utilisation de CSS
+        </h1>
+
+                <div class="hidden not-prose md:flex flex-row justify-between">
+      <a href="https://fr.w3docs.com/apprendre-css/introduction-au-css.html" title="prev" class="chapter-top-nav btn btn-info" aria-label="Previous Chapter">
+      ❮ Précédent
+    </a>
+  
+      <a href="https://fr.w3docs.com/apprendre-css/syntaxe-css.html" title="next" class="chapter-top-nav btn btn-info ml-1.5" aria-label="Next Chapter">
+      Suivant ❯
+    </a>
+  </div>
+
+      </div>
+
+      <div class="divider"></div>
+
+      
+      <div data-controller="editable">
+
+                                      
+  
+    <p> Il y a trois façons d'ajouter les styler CSS au document HTML. </p>
+
+<ul>
+  <li>style en ligne - ajouter l'attribut style aux <a href="https://fr.w3docs.com/apprendre-html/les-elements-html.html">éléments HTML</a></li>
+  <li>style interne - ajouter l'élément <a href="https://fr.w3docs.com/apprendre-html/html-tag-style.html">&lt;style&gt;</a> dans la séction <a href="https://fr.w3docs.com/apprendre-html/html-tag-head.html">&lt;head&gt;</a> </li>
+  <li>style externe - créer un fichier extérieure de CSS </li>
+</ul>
+
+
+<h2 id="style-en-ligne-1" class="scroll-mt-20">Style en ligne</h2>
+
+
+<p>Vous pouvez utiliser l'attribut <a href="https://fr.w3docs.com/apprendre-html/html-tag-style.html">style</a> de n'importe quel élément HTML pour définir les règles de style. Ces règles seront appliquées à cet élément seulement. L'attribut style peut contenir n'importe quelle propriété CSS.</p>
+
+
+
+
+
+                                        
+  
+  <div class="relative mb-5" itemscope="" itemtype="https://schema.org/Code">
+  <meta itemprop="name" content="Utilisation de style en ligne CSS | Exemple">
+  <div itemprop="text"><pre class="not-prose text-sm text-white dark:border dark:border-gray-700 overflow-scroll" style="max-height: 550px; word-break: break-word;
+    word-wrap: break-word; padding: 0; font-size: 0.9rem"><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Titre du document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
+      <span class="hljs-selector-tag">body</span> {
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#1c87c9</span>;
+      }
+      <span class="hljs-selector-tag">p</span> {
+        <span class="hljs-attribute">color</span>: white;
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Quelque information<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre></div>
+
+      <div class="text-right not-prose mt-4">
+      <a href="https://fr.w3docs.com/tools/editor/11750" target="_blank" class="btn btn-success" itemprop="url">
+        Essayez-vous-même!
+      </a>
+    </div>
+  
+  </div>
+
+
+
+
+
+
+                                        
+  
+    <h2 id="style-externe-3" class="scroll-mt-20">Style externe </h2>
+
+
+<p>Le style externe est largement utilisé pour appliquer les styles généraux  au site web entier. Il s'applique à la création d'un fichier externe CSS qui comprend toute l'information de style.  Vous pouvez créer tel type de fichier  avec n'importe quel texte ou en <a href="https://fr.w3docs.com/tools/editor">éditeur HTML</a> tel que "Notepad" ou "Sublime  text”. </p>
+
+<p> Un fichier CSS contient seulement CSS, et vous devez l'enregistrer avec l'extension .css file. Pour faire référence à la feuille de style externe à une page web vous devez utiliser la balise <a href="https://fr.w3docs.com/apprendre-html/html-tag-link.html">&lt;link&gt;</a> dans la séction &lt;head&gt; d'un document HTML. Chaque page web doit être liée à la feuille de style. </p>
+
+<p>Lors l'utilisation d'une feuille de style externe,  tous les fichiers HTML sont liés à un fichier CSS en résultant dans un apparence cohérente. Si vous voulez changer le style des pages web, vous devez faire les changements correspondants dans one .css file. </p>
+
+
+
+
+
+                                        
+  
+  <div class="relative mb-5" itemscope="" itemtype="https://schema.org/Code">
+  <meta itemprop="name" content="Utilisation de style externe CSS | Exemple">
+  <div itemprop="text"><pre class="not-prose text-sm text-white dark:border dark:border-gray-700 overflow-scroll" style="max-height: 550px; word-break: break-word;
+    word-wrap: break-word; padding: 0; font-size: 0.9rem"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre></div>
+
+      <div class="text-right not-prose mt-4">
+      <a href="https://fr.w3docs.com/tools/editor/11752" target="_blank" class="btn btn-success" itemprop="url">
+        Essayez-vous-même!
+      </a>
+    </div>
+  
+  </div>
+
+
+
+
+
+
+                  
+        
+      </div>
+    </div>
+
+        
+
+    
+
+
+              <div id="practice-container">
+        <div class="prose md:prose-md my-8">
+          <h2 class="scroll-mt-20">Pratiquez vos connaissances</h2>
+        </div>
+          <div data-controller="practice">
+
+    <div class="card bg-base-200 shadow-xl">
+      <div class="card-body">
+                  <div class="card-title">Quels sont les trois moyens d'insérer une feuille de style CSS dans le code HTML selon le site web W3Docs?</div>
+        
+        
+        <div class="flex flex-col gap-2">
+                                  <div class="flex items-center">
+                              <input type="radio" name="answer" id="answer1" value="1" class="radio radio-accent" data-practice-target="answers">
+                            <label for="answer1" class="cursor-pointer p-2">
+                Inline, Interne et Externe
+              </label>
+            </div>
+                                  <div class="flex items-center">
+                              <input type="radio" name="answer" id="answer2" value="" class="radio radio-accent" data-practice-target="answers">
+                            <label for="answer2" class="cursor-pointer p-2">
+                Interne, Responsive et Externe
+              </label>
+            </div>
+                                  <div class="flex items-center">
+                              <input type="radio" name="answer" id="answer3" value="" class="radio radio-accent" data-practice-target="answers">
+                            <label for="answer3" class="cursor-pointer p-2">
+                Inline, Externe et Fixe
+              </label>
+            </div>
+                                  <div class="flex items-center">
+                              <input type="radio" name="answer" id="answer4" value="" class="radio radio-accent" data-practice-target="answers">
+                            <label for="answer4" class="cursor-pointer p-2">
+                Inline, Interne et Responsive
+              </label>
+            </div>
+          
+          <div class="card-actions justify-between items-center">
+            <div class="text-xl">
+              <div class="hidden" data-practice-target="correct">
+                <div class="flex items-center">
+                  <img loading="lazy" src="./styleenligne_files/emojin-01.svg" alt="Correct Answer" style="margin: 0" width="32" height="32">
+                  <div class="ml-4 text-success">Correcte!</div>
+                </div>
+              </div>
+              <div class="hidden" data-practice-target="incorrect">
+                <div class="flex items-center">
+                  <img loading="lazy" src="./styleenligne_files/emojin-02.svg" alt="Wrong Answer" style="margin: 0" width="32" height="32">
+                  <div class="ml-4 text-error">Incorrecte!</div>
+                </div>
+              </div>
+            </div>
+            <button class="question-button btn btn-accent" type="button" data-action="practice#checkAnswer" id="submit-answer">
+              Envoyer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      </div>
+    
+    
+  </div>
+</div>
+
+
+        <div class="hidden not-prose md:flex flex-row justify-between">
+      <a href="https://fr.w3docs.com/apprendre-css/introduction-au-css.html" title="prev" class="chapter-top-nav btn btn-info" aria-label="Previous Chapter">
+      ❮ Précédent
+    </a>
+  
+      <a href="https://fr.w3docs.com/apprendre-css/syntaxe-css.html" title="next" class="chapter-top-nav btn btn-info ml-1.5" aria-label="Next Chapter">
+      Suivant ❯
+    </a>
+  </div>
+
+
+    <div class="prose md:prose-md max-w-none">
+      <div class="mt-5 main-content">
+                  <div class="flex buttom-ads">
+<div style="margin-right: 10px">
+       <div class="Desktop_rectangle_bottom">
+          <div data-aaad="true" data-aa-adunit="/22247219933/w3d_Desktop_rectangle_bottom"></div> 
+       </div>
+</div>
+<div style="flex-grow: 1; min-height: 336px;">
+  <div class="Desktop_horizontal_bottom">
+     <div data-aaad="true" data-aa-adunit="/22247219933/w3d_Desktop_horizontal_bottom"></div>
+   </div>
+</div>
+</div>
+              </div>
+
+            
+      <div class="flex justify-center print:hidden" data-controller="feedback" data-feedback-url-value="/feedback/vote-no/1528/2">
+	<div class="mt-5 border border-gray-300 dark:border-gray-700 rounded-lg text-center lg:w-2/3">
+		<div id="feedback-form-container" class="hidden p-10 p-md-20" data-feedback-target="formContainer">
+			<strong class="text-2xl mb-8">Désolé</strong>
+			<input type="hidden" name="token" value="6Le8frkUAAAAAGo4hSFtQEzgbMVM0KdMNM8M7EKr">
+			<div class="text-left">
+				<label class="mb-2" for="feedback-message">Comment pouvons-nous l'améliorer?</label>
+				<textarea id="feedback-message" name="message" required="" class="h-32 p-2 w-full textarea textarea-bordered" data-feedback-target="message"></textarea>
+				<div class="mt-2">
+					<button class="btn btn-info" type="button" data-action="feedback#submitFeedback">
+						Envoyer
+					</button>
+				</div>
+			</div>
+
+			<div class="hidden success-container">
+				<div class="p-5 mb-8">Merci pour vos commentaires !</div>
+			</div>
+		</div>
+
+		<div id="feedback-message-thanks" class="hidden py-16 text-2xl" data-feedback-target="messageThanks">
+			Merci pour vos commentaires !
+		</div>
+
+		<div id="feedback-action-container" class="p-8" data-feedback-target="actionContainer">
+			<div class="mb-8 block text-2xl">Trouvez-vous cela utile?</div>
+			<div>
+				<button id="feedback-positive-btn" class="btn btn-outline mr-2" data-action="feedback#feedbackPositive">
+					Oui
+				</button>
+				<button id="feedback-negative-btn" class="btn btn-outline" data-action="feedback#feedbackNegative">
+					Non
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script async="" src="./styleenligne_files/api.js.télécharger"></script>
+
+    </div>
+  </div>
+				</div>
+			</div>
+
+										<div class="col-span-3 hidden md:block pl-2 pt-8 border-l border-gray-300 dark:border-gray-700 right-aside">
+					      <div>
+ <div style="min-height: 600px; text-align: center;">
+       <div class="Desktop_Sidebar_top-right">
+            <div data-aaad="true" data-aa-adunit="/22247219933/w3d_Desktop_Sidebar_top-right"></div>
+      </div>
+  </div>
+
+  <div class=" relative py-5 text-center" style="height:100%">
+        <div class="quizzes-new max-w-[200px] mx-auto my-5 bg-base-300" id="aside-quiz-block">
+
+    <a class="how-to block text-center font-medium text-lg px-5 py-4 hover:text-info" href="https://fr.w3docs.com/quiz/">
+        Questionnaires
+    </a>
+
+    <ul class="list flex flex-col items-center gap-2.5 py-2.5 bg-base-200 hover:[&amp;&gt;li&gt;a]:text-info">
+                        <li>
+            <a href="https://fr.w3docs.com/quiz-start/html-de-base">
+                HTML - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/javascript-de-base">
+                JavaScript - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/php-de-base">
+                PHP - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/css">
+                CSS - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/es6-de-base">
+                ES6 - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/typescript-de-base">
+                TypeScript - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/angular">
+                Angular - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/react">
+                React - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/sass">
+                Sass - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/vuejs">
+                Vue.js - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/git">
+                Git - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/sql">
+                SQL - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/python">
+                Python - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/java">
+                Java - Les bases
+            </a>
+        </li>
+                <li>
+            <a href="https://fr.w3docs.com/quiz-start/node">
+                Node
+            </a>
+        </li>
+            </ul>
+</div>
+
+  </div>
+</div>
+
+ <div style="position: sticky;  top: 100px;  margin-bottom: 35px; text-align: center;">
+     <div class="Desktop_Sidebar_sticky_bottom-right">
+          <div data-aaad="true" data-aa-adunit="/22247219933/w3d_Desktop_Sidebar_sticky_bottom-right"></div>
+     </div>
+</div>
+  				</div>
+					</div>
+
+					<div class="dark:border-t border-gray-700 print:hidden">
+				<footer class="layout-footer" data-theme="dark">
+	<div class="p-6 inline-block lg:pl-20 w-full lg:w-11/12">
+
+		<div class="pb-4 hover:[&amp;&gt;ul&gt;li&gt;ul&gt;li&gt;a]:text-info">
+			        <ul class="flex flex-wrap justify-start sm:justify-evenly gap-12 md:gap-16">
+            
+                            <li class="first">        <span class="text-primary mb-4 block text-lg">Questionnaires</span>                <ul class="flex flex-col gap-1.5 menu_level_1">
+            
+                <li class="first">        <a href="https://fr.w3docs.com/quiz-start/html-de-base">HTML - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/css">CSS - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/javascript-de-base">JavaScript - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/php-de-base">PHP - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/es6-de-base">ES6 - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/typescript-de-base">TypeScript - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/java">Java - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/angular">Angular - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/react">React - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/sass">Sass - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/vuejs">Vue.js - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/python">Python - Les bases</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/node">Node</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/quiz-start/git">Git - Les bases</a>        
+    </li>
+
+    
+                <li class="last">        <a href="https://fr.w3docs.com/quiz-start/sql">SQL - Les bases</a>        
+    </li>
+
+
+    </ul>
+
+    </li>
+
+    
+                            <li>        <span class="text-primary mb-4 block text-lg">Snippets</span>                <ul class="flex flex-col gap-1.5 menu_level_1">
+            
+                <li class="first">        <a href="https://fr.w3docs.com/snippets/git.html">Comment Git</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/snippets/javascript.html">Comment JavaScript</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/snippets/css.html">Comment CSS</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/snippets/php.html">Comment PHP</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/snippets/symfony.html">Comment Symfony</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/snippets/html.html">Comment HTML</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/snippets/java.html">Comment Java</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/snippets/angularjs.html">Comment AngularJs</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/snippets/nodejs.html">Comment NodeJs</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/snippets/linux.html">Comment Linux</a>        
+    </li>
+
+    
+                <li class="last">        <a href="https://fr.w3docs.com/snippets/apache.html">Comment Apache</a>        
+    </li>
+
+
+    </ul>
+
+    </li>
+
+    
+                            <li>        <span class="text-primary mb-4 block text-lg">Nos livres</span>                <ul class="flex flex-col gap-1.5 menu_level_1">
+            
+                <li class="first">        <a href="https://fr.w3docs.com/apprendre-html.html">Apprendre HTML</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/apprendre-css.html">Apprendre CSS</a>        
+    </li>
+
+    
+                <li class="last">        <a href="https://fr.w3docs.com/apprendre-javascript.html">Apprendre Javascript</a>        
+    </li>
+
+
+    </ul>
+
+    </li>
+
+    
+                            <li class="last">        <span class="text-primary mb-4 block text-lg">Nos outils</span>                <ul class="flex flex-col gap-1.5 menu_level_1">
+            
+                <li class="first">        <a href="https://fr.w3docs.com/tools/code-diff/">Différence de Code</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/nx/color/color-picker">Pipette à couleurs</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/tools/html-encoder/">Encodeur HTML</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/nx/feature-detection">Browser Feature Detection</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/tools/editor">Éditeur HTML</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/nx/formatter/javascript">Javascript Formatter</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/tools/password-generator">Générateur de Mots de Passe</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/tools/image-base64">Base 64</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/nx/number/base-converter">Number convertor</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/nx/json-beautify">JSON Beautifier</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/nx/css-beautify">CSS Beautifier</a>        
+    </li>
+
+    
+                <li>        <a href="https://fr.w3docs.com/nx/tailwindcss-closest-color">Find the Closest Tailwind CSS Color</a>        
+    </li>
+
+    
+                <li class="last">        <a href="https://fr.w3docs.com/nx/marked">Markdown Convertor</a>        
+    </li>
+
+
+    </ul>
+
+    </li>
+
+
+    </ul>
+
+		</div>
+
+		<div class="divider"></div>
+
+		<div class="py-8 flex gap-4 flex-col md:flex-row items-center md:justify-between">
+			<div>
+				        <ul class="flex gap-4">
+            
+                <li class="first">        <a href="https://fr.w3docs.com/about-us">À Propos</a>        
+    </li>
+
+    
+                <li class="last">        <a href="https://fr.w3docs.com/privacy-policy">Politique de Confidentialité pour W3Docs</a>        
+    </li>
+
+
+    </ul>
+
+			</div>
+
+			<a href="https://fr.w3docs.com/" aria-label="w3docs homepage">
+				<img src="./styleenligne_files/footer-logo.png" alt="logo" width="111" height="30">
+
+			</a>
+
+			<div class="flex gap-2">
+				<strong>Suivez nous</strong>
+				<a id="follows-fb" href="https://www.facebook.com/w3docs" target="_blank" aria-label="follow on facebook" rel="noopener">
+					<img src="./styleenligne_files/facebook.svg" width="24" height="24" alt="facebook">
+				</a>
+			</div>
+		</div>
+
+		<div class="divider"></div>
+		<div class="pt-8 text-center">
+			<small>Société &amp;copy; W3docs. Tous droits réservés.</small>
+		</div>
+	</div>
+</footer>
+
+			</div>
+			</div>
+</div><iframe name="googlefcPresent" style="width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px; display: none;" src="./styleenligne_files/saved_resource(2).html"></iframe>
+<script>
+// Delete the Funding Choices cookie if consent is more than 12 months old
+try {
+  const nm = "FCCDCF";        // Match name of Funding Choices cookie
+  const dm = "w3docs.com";    // Match domain of Funding Choices cookie
+  const pa = "/";             // Match path of Funding Choices cookie
+  let tc = ('; ' + document.cookie).split('; ' + nm + '=');
+  if (tc.length === 2) {
+    tc = decodeURIComponent(tc.pop().split(';').shift());
+    tc = JSON.parse(tc)[3][0].substring(1,9);
+    tc = Uint8Array.from(window.atob(tc), (v) => v.charCodeAt(0));
+    let dt = (tc[0] * 2**28) + (tc[1] * 2**20) + (tc[2] * 2**12) +
+      (tc[3] * 2**4)  + (tc[4] >> 4);
+    if (Date.now() / 1000 - dt / 10 > 86400 * 365)
+      document.cookie = nm + "=;path=" + pa + ";domain=" + dm +
+        ";expires=" + new Date(0).toUTCString();
+  }
+} finally {}
+</script>
+<!-- templates/base.html.twig -->
+<div data-controller="toaster" class="toast toast-end toast-top mt-16" data-toaster-target="toaster"></div>
+
+  
+
+
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-3tjga1ape8ig" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="./styleenligne_files/anchor.html"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./styleenligne_files/saved_resource(3).html"></iframe></div></body></html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Dogra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Acceuil</title>
+</head>
+<body>
+ <header>
+    <nav>
+         <ul>
+            <li><a href="#foot">contact</a></li>
+         </ul>
+    </nav>
+    <h1 id="sommet"> HTML</h1>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Acceuil</a></li>
+            <li><a href="./css.html">Css</a></li>
+            <li><a href="./pageHtml.html">Html</a></li>
+            <li><a href="./javascript.html">Javascript</a></li>
+         </ul>
+    </nav>
+ </header>
+ <main>
+   <section id="presentation-html">
+      <h2>Presentation HTML</h2>
+      <div class="html-logo-titre">
+         <img src="../imgs/html-logo1.jpg" alt="logohtml">
+      </div>
+         <article class="article-introduction-html">
+            <div class="box-img-html-presentation">
+               <img src="../imgs/presentation-html1.jpg" alt="html-img1">
+            </div>
+            <h3>Qu'est-ce que le HTML ?</h3>
+            <p>HTML (HyperText Markup Language) n'est pas un langage de programmation : c'est un langage de balisage qui sert à indiquer au navigateur comment structurer les pages web visitées. Il peut être aussi compliqué ou aussi simple que le développeur web souhaite qu'il soit. Le HTML se compose d'une série d'éléments avec lesquels vous pouvez encadrer, envelopper ou baliser différentes parties du contenu pour les faire apparaître ou agir d'une certaine manière. Des balises encadrantes peuvent transformer une petite partie de contenu en un lien vers une autre page sur le Web, mettre des mots en italique, etc.</p> 
+         </article>
+         <article class="anatomie-box">
+            <h3>Anatomie d'un element HTML</h3>
+            <div class="article-anatomie">
+               <div class="article-anatomie-paragraphe">
+             <p>Les principales parties de notre élément sont :
+               <ol>
+                  <li>La balise ouvrante : il s'agit du nom de l'élément (dans ce cas, p), encadré par un chevron ouvrant (&lt;) et un chevron fermant (>). Elle indique où l'élément commence ou commence à prendre effet — dans ce cas où commence le paragraphe.</li>
+                  <li>Le contenu : il s'agit du contenu de l'élément. Dans notre cas, c'est simplement du texte.</li>
+                  <li>La balise fermante : c'est la même que la balise ouvrante, sauf qu'elle comprend une barre oblique (/) avant le nom de l'élément. Elle indique la fin de l'élément — dans ce cas, la fin du paragraphe. Ne pas inclure une balise de fermeture est une erreur fréquente chez les débutants, et peut amener des résultats étranges.</li>
+               </ol>
+               La balise ouvrante, suivie par le contenu puis par la balise fermante, composent ensemble l'élément.</p>
+               </div>            
+             <img src="../imgs/anatomie-html.png" alt="anatomie-html">
+            </div>
+         </article>
+         <article class="container-bloc-vs-line">
+            <h3>Element bloc vs en ligne</h3>
+            <p>Il existe deux catégories importantes d'éléments en HTML que vous devez connaître : les éléments de niveau bloc et les éléments en ligne.
+               <ul>
+                  <li>Les éléments de niveau bloc forment un bloc visible sur une page — ils apparaissent sur une nouvelle ligne quel que soit le contenu précédant et tout contenu qui les suit apparaît également sur une nouvelle ligne. Les éléments de niveau bloc sont souvent des éléments structurels de la page et représentent, par exemple, des paragraphes, des listes, des menus de navigation, des pieds de page, etc. Un élément de niveau bloc ne peut pas être imbriqué dans un élément en ligne, mais il peut être imbriqué dans un autre élément de niveau bloc.</li>
+                  <li>Les éléments en ligne sont contenus dans des éléments de niveau bloc. Ils entourent seulement des petites parties du contenu du document, ni des paragraphes entiers, ni des regroupements de contenu. Un élément en ligne ne fait pas apparaître une nouvelle ligne dans le document. Il apparaît généralement dans un paragraphe de texte, par exemple un élément &lt;a&gt; (hyperlien) ou des éléments de mise en évidence tels que &lt;em&gt; ou &lt;strong&gt;.</li>
+               </ul>
+               Prenez l'exemple suivant :</p>
+               <div class="box-bloc-vs-line">
+                  <img src="../imgs/blocvsline-1.jpeg" alt="blocvsline1">
+                  <p> &lt;em&gt; est un élément en ligne et, comme vous pouvez le voir ci-dessous, les trois premiers éléments s'affichent sur la même ligne sans qu'il n'y ait d'espace entre eux. Par contre, &lt;p&gt; est un élément de niveau bloc, donc chaque élément apparaît sur une nouvelle ligne et un espace apparaît au-dessus et au-dessous de chacun d'eux (l'espacement est dû au style CSS par défaut du navigateur qui s'applique aux paragraphes).</p>
+                  <img src="../imgs/blocvsline-2.jpeg" alt="blocvsline2">
+               </div>
+         </article>
+   </section>
+ </main>
+ <footer id="foot">
+   <div class="footer-container">
+       <div>
+           <a href="#sommet"><img src="../imgs/arrow-up.jpg" alt="arrowup"></a>
+       </div>
+       <article>
+           <div class="logo-up">
+               <img class="logo-telephone" src="../imgs/address-icon-logo-illustration-map-pointer-house-symbol-template-for-graphic-and-web-design-collection-free-vector.jpg" alt="logo">
+           </div>
+           <h3>Adresse</h3>
+           <p>13 rue des figues en rute</p>
+       </article>
+       <article>
+           <div>
+             <img src="../imgs/mail-icon-2048x2048-525ey8hu.png" alt="emailogo">
+           </div>
+           <h3>email</h3>
+           <p>bababrown69@gmail.vietnam</p>
+       </article>
+       <article>
+           <div>
+             <img src="../imgs/telephone logo.png" alt="téléphone">
+           </div>
+           <h3>Téléphone</h3>
+           <p>02 36 79 08 99</p>
+       </article>
+       <div class="logo-up-2">
+           <a href="#sommet"><img src="../imgs/arrow-up.jpg" alt="arrowup"></a>
+       </div>
+   </div>
+
+</footer>
+</body>
+</html>
